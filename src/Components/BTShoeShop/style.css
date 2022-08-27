@@ -1,0 +1,5 @@
+.content{
+    background-image: url("../../../public/logo.jpg");
+    background-size: contain;
+    background-repeat: repeat-y;
+}
