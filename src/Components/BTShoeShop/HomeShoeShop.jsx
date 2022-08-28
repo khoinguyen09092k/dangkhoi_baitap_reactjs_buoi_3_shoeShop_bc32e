@@ -59,10 +59,11 @@ export default class HomeShoeShop extends Component {
     render() {
         return (
             <div className='content'>
-                
+                <div className='background_color'>
+                    
                 <h2 className='text-white text-center bg-secondary p-2'>SHOE SHOP</h2>
                 <div className='container '>
-               
+
                     <div className='row'>
                         <div className='col-3 '>
                             <GioHang carts={this.state.shoeCarts} />
@@ -89,6 +90,8 @@ export default class HomeShoeShop extends Component {
 
                     </div>
                 </div>
+                </div>
+
             </div>
         )
     }
