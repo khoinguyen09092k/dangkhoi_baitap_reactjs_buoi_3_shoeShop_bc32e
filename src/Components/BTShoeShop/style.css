@@ -1,0 +1,9 @@
+.content{
+    background-image: url("../../../public/logo.jpg");
+    background-size: contain;
+    background-repeat: repeat-y;
+}
+
+.background__color{
+    background-color: rgba(11, 11, 11, 0.2);
+}
