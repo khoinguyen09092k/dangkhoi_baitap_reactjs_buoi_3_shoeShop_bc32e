@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class GioHang extends Component {
     render() {
-        const {carts,counterCartsUp,counterCartsDown,number} = this.props
+        const {carts,counterCartsUp,counterCartsDown,number,isLoggerStore} = this.props
         const renderCarts = ()=>{
           return carts.map((item)=>{
             return(
@@ -29,7 +29,7 @@ export default class GioHang extends Component {
             <div>
                 <div>
                     <button type="button" className="btn btn-info btn-block mt-3 p-3 " data-toggle="modal" data-target="#exampleModal">
-                       Carts <i className="fa-solid fa-cart-plus" > <span className='text-danger'>+ {number} </span></i>
+                       Carts <i className="fa-solid fa-cart-plus" > {isLoggerStore&&(<span className='text-danger'>+ {number} </span>)}</i>
                     </button>
                 
                     <div className="modal fade" id="exampleModal" tabIndex={-1} role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

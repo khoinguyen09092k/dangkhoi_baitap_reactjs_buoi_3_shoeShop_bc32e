@@ -9,6 +9,7 @@ export default class HomeShoeShop extends Component {
     state = {
 
         isLogger: false,
+        isLoggerStore: false,
         shoe: {
             "id": 1,
             "name": "Adidas Prophere",
@@ -39,6 +40,9 @@ export default class HomeShoeShop extends Component {
         this.setState({ isLogger: true })
     }
 
+    handleStore = () => {
+        this.setState({ isLoggerStore: true })
+    }
     handleShoe = (value) => {
         this.setState({ shoe: value })
     }
@@ -85,10 +89,10 @@ export default class HomeShoeShop extends Component {
         })
     }
 
-    storeCounter = (number) =>{
-       this.setState({
-        number : number +=1
-       })
+    storeCounter = (number) => {
+        this.setState({
+            number: number += 1
+        })
     }
     render() {
         return (
@@ -100,7 +104,7 @@ export default class HomeShoeShop extends Component {
 
                         <div className='row'>
                             <div className='col-3 '>
-                                <GioHang carts={this.state.shoeCarts} counterCartsUp={this.counterCartsUp} counterCartsDown={this.counterCartsDown}    number ={this.state.number}/>
+                                <GioHang carts={this.state.shoeCarts} counterCartsUp={this.counterCartsUp} counterCartsDown={this.counterCartsDown} number={this.state.number} isLoggerStore={this.state.isLoggerStore} />
                                 <h6 className='bg-warning text-center text-dark p-3 mt-3 rounded'>Detail</h6>
 
                                 {this.state.isLogger && (
@@ -114,7 +118,7 @@ export default class HomeShoeShop extends Component {
                                     {
                                         data.map((value) => {
                                             return <div className='col-4 mt-3 mb-2' key={value.id}>
-                                                <RenderShoe products={value} handleShoe={this.handleShoe} handleDetail={this.handleDetail} buyCarts={this.buyCarts} storeCounter={this.storeCounter}  number1 ={this.state.number}/>
+                                                <RenderShoe products={value} handleShoe={this.handleShoe} handleDetail={this.handleDetail} buyCarts={this.buyCarts} storeCounter={this.storeCounter} number1={this.state.number} handleStore={this.handleStore} />
                                             </div>
                                         })
                                     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class RenderShoe extends Component {
   render() {
-    const {products,handleShoe,handleDetail,buyCarts,storeCounter,number1} = this.props 
+    const {products,handleShoe,handleDetail,buyCarts,storeCounter,number1,handleStore} = this.props 
     return (
         <div className='card'>
         <img src={products.image} alt="" />
@@ -13,6 +13,7 @@ export default class RenderShoe extends Component {
             <p>{products.price}</p>
             <button className="btn btn-dark" 
              onClick={()=>{
+              handleStore()
               buyCarts(products)
               storeCounter(number1)
             }}
